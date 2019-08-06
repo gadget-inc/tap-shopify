@@ -480,9 +480,15 @@
           "array"
         ]
       },
-      "total_discount_set": {},
-      "pre_tax_price_set": {},
-      "price_set": {},
+      "total_discount_set": {
+        "$ref": "definitions.json#/price_set"
+      },
+      "pre_tax_price_set": {
+        "$ref": "definitions.json#/price_set"
+      },
+      "price_set": {
+        "$ref": "definitions.json#/price_set"
+      },
       "grams": {
         "type": [
           "null",
@@ -813,6 +819,7 @@
     "items": {
       "properties": {
         "price_set": {
+          "$ref": "definitions.json#/price_set"
         },
         "price": {
           "type": [
@@ -868,5 +875,34 @@
       "null",
       "array"
     ]
+  },
+  "price_set_price": {
+    "type": "object",
+    "properties": {
+      "amount": {
+        "type": ["null", "string"]
+      },
+      "currency_code": {
+        "type": ["null", "string"]
+      }
+    }
+  },
+  "price_set": {
+    "properties": {
+      "shop_money": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "$ref": "definitions.json#/price_set_price"
+      },
+      "presentment_money": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "$ref": "definitions.json#/price_set_price"
+      }
+    }
   }
 }
